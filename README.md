@@ -10,5 +10,5 @@ Client and server installation and usage supported.
 With Meteor 0.9 and above, install using:
 
 ```sh
-$ meteor add jaywon:meteor-node-uuid
+$ meteor add netanelgilad:node-uuid
 ```

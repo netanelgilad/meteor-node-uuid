@@ -1,16 +1,18 @@
 Package.describe({
-  name: "jaywon:meteor-node-uuid",
+  name: "netanelgilad:node-uuid",
   summary: "Generate RFC compliant UUIDs using node-uuid.",
-  version: "1.0.1",
-  git: "https://github.com/jaywon/meteor-node-uuid"
+  version: "1.0.2",
+  git: "https://github.com/netanelgilad/node-uuid"
+});
+
+Npm.depends({
+  'node-uuid': '1.4.1'
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('0.9.0');
   
-  var path = Npm.require('path');
-  var asset_path = path.join('node-uuid');
+  api.addFiles('netanelgilad:node-uuid.js', 'server');
 
-  api.addFiles(path.join(asset_path, 'uuid.js'), 'client');
-  api.addFiles(path.join(asset_path, 'uuid.js'), 'server');
+  api.export('UUID');
 });
